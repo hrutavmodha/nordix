@@ -3,6 +3,7 @@
     "private": false,
     "version": "1.0.0",
     "type": "module",
+    "main": "./dist/nordix-es.js",
     "scripts": {
         "start": "vite",
         "build": "tsc && vite build",
@@ -10,10 +11,20 @@
     },
     "license": "MIT",
     "files": [
-        "./dist/assets",
+        "./dist/nordix-es.js",
+        "./dist/nordix-cjs.js",
+        "./dist/types/",
         "./package.json",
         "./README.md"
     ],
+    "module": "./dist/nordix-es.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/nordix-es.js",
+            "require": "./dist/nordix-cjs.js"
+        }
+    },
     "author": {
         "email": "modhahrutav@gmail.com",
         "name": "Hrutav Modha"

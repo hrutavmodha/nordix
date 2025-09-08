@@ -15,6 +15,10 @@ type CSSProps = {
     [T in keyof CSSStyleDeclaration]?: string | number
 }
 
+declare module 'nordix' {
+    export * from './index'
+}
+
 declare namespace JSX {
     interface IntrinsicElements {
         a: Props<HTMLAnchorElement>;

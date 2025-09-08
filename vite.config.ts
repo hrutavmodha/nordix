@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite'
 import {
     dirname,
-    join
+    join,
+    resolve
 } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -18,11 +19,21 @@ export default defineConfig({
     esbuild: {
         jsx: 'automatic',
         jsxImportSource: 'render',
-        format: 'esm'
     },
     base: '/',
     build: {
         minify: false,
-        emptyOutDir: true
+        emptyOutDir: true,
+        lib: {
+            entry: resolve(__dirname, 'src', 'index.ts'),
+            name: 'Nordix',
+            formats: [
+                'cjs',
+                'es'
+            ],
+            fileName: (format: string) => {
+                return `nordix-${format}.js`
+            }
+        }
     }
 })
