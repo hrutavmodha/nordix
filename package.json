@@ -24,7 +24,11 @@
     "files": [
         "./dist/nordix-es.js",
         "./dist/nordix-cjs.js",
-        "./dist/types/",
+        "./dist/types/renderer",
+        "./dist/types/router",
+        "./dist/types/state",
+        "./dist/types/index.d.ts",
+        "./dist/types/main.d.ts",
         "./package.json",
         "./README.md"
     ],
