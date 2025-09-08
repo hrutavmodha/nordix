@@ -10,6 +10,17 @@
         "preview": "vite preview"
     },
     "license": "MIT",
+    "keywords": [
+        "jsx",
+        "frontend",
+        "framework",
+        "state-management",
+        "client-side-routing",
+        "typescript",
+        "type-safety",
+        "nordix",
+        "nordix-jsx-runtime"
+    ],
     "files": [
         "./dist/nordix-es.js",
         "./dist/nordix-cjs.js",
