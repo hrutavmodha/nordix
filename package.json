@@ -1,7 +1,7 @@
 {
     "name": "nordix",
     "private": false,
-    "version": "1.0.2",
+    "version": "1.0.3",
     "type": "module",
     "main": "./dist/nordix-es.js",
     "scripts": {
@@ -27,7 +27,7 @@
         "./jsx-runtime": {
             "import": "./dist/nordix-es.js",
             "require": "./dist/nordix-cjs.js"
-        }, 
+        },
         "./jsx-dev-runtime": {
             "import": "./dist/nordix-es.js",
             "require": "./dist/nordix-cjs.js"
