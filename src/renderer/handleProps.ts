@@ -4,25 +4,17 @@ import handleStyles from './handleStyles'
 export default function handleProps(
     element: any,
     props: any
-) {
+): void {
     for (let attr in props) {
         if (
             attr.startsWith('on') &&
             typeof props[attr] === 'function'
         ) {
-            element.addEventListener(attr.substring(2), props[attr])
+            element.addEventListener(attr.substring(2).toLowerCase(), props[attr]) // Added .toLowerCase()
         }
-        else if (
-            attr === 'children'
-        ) {
-            let children =
-                Array.isArray(props[attr]) ?
-                    props[attr] :
-                    [props[attr]]
-            children = children.flat(Infinity)
-            children.forEach((child: any) => {
-                element.appendChild(handleChildren(child))
-            })
+        else if (attr === 'children') {
+            const childNode = handleChildren(props[attr])
+            element.appendChild(childNode)
         }
         else if (attr === 'className') {
             element.className = props[attr]
@@ -31,7 +23,7 @@ export default function handleProps(
             handleStyles(element, props[attr])
         }
         else if (element instanceof HTMLElement) {
-            element.setAttribute(attr, props[attr])
+            element.setAttribute(attr, props[attr]);
         }
     }
 }

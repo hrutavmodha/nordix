@@ -1,14 +1,8 @@
 export default function render(
-    element: any,
+    element: HTMLElement,
     parent?: HTMLElement
-): void {
-    let container: HTMLElement
-    if (!parent) {
-        container = document.body
-    }
-    else {
-        container = parent
-    }
+) {
+    const container = parent ? parent : document.body
     container.innerHTML = ''
     container.appendChild(element)
 }

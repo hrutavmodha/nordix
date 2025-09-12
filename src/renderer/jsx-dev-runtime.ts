@@ -6,3 +6,8 @@ export function jsxDEV(
 ) {
     return jsx(type, props)
 }
+
+export {
+    jsxs,
+    Fragment
+} from './jsx-runtime'

@@ -6,8 +6,9 @@ export function renderRoutes() {
     const path = window.location.pathname
     if (routes[path]) {
         const html = routes[path]()
-        document.body.innerHTML = ''
-        document.body.appendChild(html)
+        const root = document.getElementById('root') as HTMLDivElement
+        root.innerHTML = ''
+        root.appendChild(html)
     }
     else {
         console.log('Matching route not found')

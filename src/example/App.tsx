@@ -14,10 +14,7 @@ export default function App() {
     return (
         <div className="main">
             <h1>Hello World</h1>
-            <button onclick={(e: any) => {
-                e.preventDefault()
-                navigate('/home')
-            }}>Go to Home</button>
+            <button onclick={() => navigate('/home')}>Go to Home</button>
             <p>{count}</p>
             <button onclick={() => {
                 updateState('count', count + 1)

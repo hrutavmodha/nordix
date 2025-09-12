@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import {
     dirname,
     join,
@@ -35,5 +35,9 @@ export default defineConfig({
                 return `nordix-${format}.js`
             }
         }
+    },
+    test: {
+      globals: true,
+      environment: "jsdom"
     }
 })

@@ -4,4 +4,4 @@ import { setRender } from './renderer/rerenderer'
 
 const root = document.getElementById('root') as HTMLDivElement
 render(App(), root)
-setRender(() => render(App(), root))
+setRender(() => render)

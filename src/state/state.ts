@@ -1,35 +1,27 @@
 import { reRender } from '../renderer/rerenderer'
 
 type State = {
-    identifier: string,
-    value: any
+    [identifier: string]: any
 }
 
-let states: Array<State> = []
+let states: State = {}
 
 export function createState(
     identifier: string,
     value: any
 ): any {
-    for (let state of states) {
-        if (state.identifier === identifier) {
-            return state.value
-        }
+    if (states[identifier] === undefined) {
+        states[identifier] = value
     }
-    states.push({
-        identifier: identifier,
-        value: value
-    })
-    return value
+    return states[identifier]
 }
 
 export function updateState(
     identifier: string,
     newValue: any
 ): void {
-    const stateToUpdate = states.find((state: State) => state.identifier === identifier)
-    if (stateToUpdate) {
-        stateToUpdate.value = newValue
+    if (states[identifier] !== newValue) {
+        states[identifier] = newValue
         reRender()
     }
 }
