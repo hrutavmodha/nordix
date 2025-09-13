@@ -6,20 +6,11 @@ import {
     createState,
     updateState
 } from '../state/state'
-import runEffect from '../state/effect'
 import Home from './Home'
 
 export default function App() {
     const count = createState('count', 0)
     const decrease = createState('decrease', 100)
-    runEffect(() => {
-        console.log('Side effect Event triggered')
-        return () => {
-            setTimeout(() => {
-                console.log('\n')
-            }, 0)
-        }
-    }, [count])
     return (
         <div className="main">
             <h1>Hello World</h1>
