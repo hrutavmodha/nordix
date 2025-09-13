@@ -1,9 +1,5 @@
 import { reRender } from '../renderer/rerenderer'
-
-type State = {
-    [identifier: string]: any
-}
-
+import { type State } from '../types/types'
 let states: State = {}
 
 export function createState(

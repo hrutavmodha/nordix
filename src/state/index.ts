@@ -1,6 +1,5 @@
 export {
     createState,
-    updateState,
-    createSignal,
-    createEffect
+    updateState
 } from './state'
+export { default as runEffect } from './effect'

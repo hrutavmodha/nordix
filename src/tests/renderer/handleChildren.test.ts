@@ -1,6 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
 import handleChildren from '../../renderer/handleChildren';
-import createElement from '../../renderer/createElement'; // Import createElement for mocking
 
 vi.mock('../../renderer/createElement', () => ({
   default: vi.fn((type, props) => {

@@ -11,9 +11,9 @@ export default function Home() {
     return (
         <>
             <h1>Hello Home</h1>
-            <input type="text" value={name} oninput={handleClick} />
-            <button onclick={() => navigate('/')}>Go Home</button>
-
+            <input value={name} type="text" oninput={handleClick} />
+            <p>You entered: {name}</p>
+            <button onclick={() => {navigate('/')}}>Go Back</button>
         </>
     )
 }
